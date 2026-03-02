@@ -1,8 +1,4 @@
 <?php
-// Show errors
-require_once 'assets/includes/display_errors.php';
-// Database connection
-require_once 'assets/config/db.php';
 // User info
 require_once 'assets/functions/select-id.php';
 // Header
