@@ -3,8 +3,10 @@
 require_once 'assets/includes/display_errors.php';
 // Database connection
 require_once 'assets/config/db.php';
-// User info
-require_once 'assets/functions/select-id.php';
+// Update user
+require_once 'assets/functions/user_update.php';
+// User-id 
+require_once 'assets/functions/user_select-id.php';
 // Header
 require_once 'assets/includes/header.php';
 ?>
