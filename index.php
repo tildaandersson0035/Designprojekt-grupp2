@@ -11,7 +11,6 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
 
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
     <meta charset="utf-8">
     <title>Chef's Kiss</title>
@@ -39,12 +38,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
           <div class="col-md-10 mx-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
               <div class="form-floating mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                 <label for="floatingInput">E-post</label>
               </div>
               <div class="form-floating mb-3">
@@ -60,28 +54,22 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                 Registera
               </button>
               <small class="text-body-secondary"
-                >Genom att registrera dig godkänner du våra <a href="terms.html">användarvillkor.</a></small
-              >
+                >Genom att registrera dig godkänner du våra <a href="terms.html">användarvillkor.</a></small>
               <hr class="my-3" />
               <small class="text-body-secondary"
-                >Redan medlem? <a href="log-in.html">logga in här.</a></small
-              >
+                >Redan medlem? <a href="log-in.html">logga in här.</a></small>
             </form>
           </div>
         </div>
       </div>
-
       <hr class="my-3" /> <!-- Separator -->
-
         <!-- Innehåll -->
       <div class="container px-4 py-5" id="featured-3">
-        
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
             <!-- En ruta -->
           <div class="feature col">
             <div
-              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
-            >
+              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <svg class="bi" width="1em" height="1em" aria-hidden="true">
                 <use xlink:href="#collection"></use>
               </svg>
@@ -90,18 +78,12 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
             <p>
               Vi vet att du sitter på en paradrätt som förtjänar en chef's kiss. Vad gör du som imponerar på dejten eller svärmor eller vardagshjälten?
             </p>
-            <a href="#" class="icon-link">
-              Lägg upp egna recept
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg>
-            </a>
+            <a href="#" class="link-underline">Lägg upp egna recept</a>
           </div>
            <!-- En ruta -->
           <div class="feature col">
             <div
-              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
-            >
+              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <svg class="bi" width="1em" height="1em" aria-hidden="true">
                 <use xlink:href="#people-circle"></use>
               </svg>
@@ -110,18 +92,12 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
             <p>
               Hjälp andra att nå en större chef's kiss genom att förbättra deras recept! Kanske har du en hemlig ingrediens eller ett knep som gör att det blir ännu bättre? 
             </p>
-            <a href="#" class="icon-link">
-              Förbättra andras recept
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg>
-            </a>
+            <a href="#" class="link-underline"> Förbättra andras recept</a>
           </div>
            <!-- En ruta -->
           <div class="feature col">
             <div
-              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
-            >
+              class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
               <svg class="bi" width="1em" height="1em" aria-hidden="true">
                 <use xlink:href="#toggles2"></use>
               </svg>
@@ -130,19 +106,11 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
             <p>
               Här i vår aktiva gemenskap finns en uppsjö av recept som förtjänar en chef's kiss och diskussioner som hjälper till att höja matlagningen till nya nivåer. Kanske är världens bästa köttfärssås bara ett klick bort? 
             </p>
-            <a href="#" class="icon-link">
-              Bläddra i kokboken
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg>
-            </a>
+            <a href="#" class="link-underline">Bläddra i kokboken</a>
           </div>
         </div>
       </div>
-
          <hr class="my-3" /> <!-- separator -->
-
-    
       <!-- Månadens recept galleri -->
       <div class="album py-5 bg-body-tertiary">
         <!-- Månadens recept text -->
@@ -155,11 +123,99 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
           </div>
         </div>
         <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3">
            <!-- Ett recept -->
-          <div class="col"> 
-            <div class="card shadow-sm">
+          <div class="d-flex align-items-stretch position-relative">
+          <!-- Kort 1 -->
+            <div class="card shadow-sm h-100" style="z-index: 2; width: 50%; transform: translateY(-10px); margin-right: -20px;">
+            <div class="text-center">
+                <h3 class="card-title mt-4">$recipieTitle</h3>
+                <div class="container">
+    <div class="d-flex align-items-center justify-content-center">
+        <div style="width: 7%;">
+            <div class="ratio ratio-1x1">
+                <img src="assets/images/example.png" 
+                     class="rounded-circle object-fit-cover" 
+                     alt=" $recipeChefName profile picture">
+            </div>
+        </div>
+        <p class="card-text ms-3 mb-0"> $recipeChefName</p> 
+    </div>
+    <div class="text-center mt-2">
+    <div class="text-warning fs-5"> <!-- Stjärnor för betyg  (behöver lägga till betyg från databasen och text för skärmläsare-->
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        <i class="fa-regular fa-star"></i>
+    </div>
+</div>
+  </div>
+                <div class="container d-flex justify-content-center">
+                    <div style="width: 50%;">
+                        <div class="ratio ratio-1x1">
+                            <img src="assets/images/example.png" class="rounded-circle object-fit-cover" alt="recipieTitle>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="card-body">
+
+                  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                  <small class="text-body-secondary">$recipieKitchen</small>
+                  <small class="text-body-secondary">$recipieProtein</small>
+                  <small class="text-body-secondary">$recipieDifficulty</small>
+                    <small class="text-body-secondary">$recipieTime</small>
+                  </div>
+                </div>
+              </div>
+              <!-- Kort 2 -->
+<div class="card shadow-sm ms-3 h-100" style="z-index: 1; width: 50%; margin-top: 10px;">
+    <div class="card-body">
+        <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+            $recipieDescription
+        </p>
+        <div class="mb-3">
+            <a href="#" class="link-underline">Se recept</a>
+        </div>
+        <div class="btn-group mb-3">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Spara</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Gör om gör rätt</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Betygsätt</button>
+        </div>
+        <hr class="my-3" />
+        <div class="comment-section">
+            <div class="comment mb-3">
+                <div class="d-flex align-items-center mb-2">
+                    <div style="width: 10%;"> <div class="ratio ratio-1x1">
+                            <img src="assets/images/example.png" 
+                                 class="rounded-circle object-fit-cover" 
+                                 alt="$recipeChefName profile picture">
+                        </div>
+                    </div>
+                    <p class="card-text fw-bold ms-2 mb-0">$commenterName</p>
+                </div>
+                <p class="card-text mb-1">$commentText</p>
+                <p class="text-body-secondary fw-light small text-end">$commentDate</p>
+                
+                <div class="mb-3">
+                    <a href="#" class="link-underline small">Se alla kommentarer</a>
+                </div>
+            </div>
+            <div class="input-group">
+                <textarea class="form-control small" id="commentTextArea" rows="2" placeholder="Vad tyckte du om receptet?"></textarea>
+                <button class="btn btn-primary" type="button">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <!-- Ett recept -->
+          <div class="d-flex align-items-stretch position-relative">
+          <!-- Kort 1 -->
+            <div class="card shadow-sm h-100" style="z-index: 2; width: 50%; transform: translateY(-10px); margin-right: -20px;">
             <div class="text-center">
                 <h3 class="card-title mt-4">$recipieTitle</h3>
                 <div class="container">
@@ -172,14 +228,20 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                      alt=" $recipeChefName profile picture">
             </div>
         </div>
-
         <p class="card-text ms-3 mb-0">
             $recipeChefName
         </p> 
-        
+    </div>
+    <div class="text-center mt-2">
+    <div class="text-warning fs-5"> <!-- Stjärnor för betyg  (behöver lägga till betyg från databasen och text för skärmläsare-->
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        <i class="fa-regular fa-star"></i>
     </div>
 </div>
-
+  </div>
                 <div class="container d-flex justify-content-center">
                     <div style="width: 50%;">
                         <div class="ratio ratio-1x1">
@@ -187,407 +249,70 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                         </div>
                     </div>
                 </div>
+            </div>
+                <div class="card-body">
 
-            </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    Receptbeskrivning. En kort beskrivning av vad det är för rätt och varför den förtjänar en chef's kiss.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Öppna repcept
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Gör om gör rätt
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">Tidsåtgång</small>
+                  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                  <small class="text-body-secondary">$recipieKitchen</small>
+                  <small class="text-body-secondary">$recipieProtein</small>
+                  <small class="text-body-secondary">$recipieDifficulty</small>
+                    <small class="text-body-secondary">$recipieTime</small>
                   </div>
                 </div>
               </div>
-            </div>
+              <!-- Kort 2 -->
+<div class="card shadow-sm ms-3 h-100" style="z-index: 1; width: 50%; margin-top: 10px;">
+    <div class="card-body">
+        <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+            $recipieDescription
+        </p>
+        
+        <div class="mb-3">
+            <a href="#" class="link-underline">Se recept</a>
+        </div>
 
-<!-- Ett recept -->
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
+        <div class="btn-group mb-3">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Spara</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Gör om gör rätt</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Betygsätt</button>
+        </div>
+        <hr class="my-3" />
+        <div class="comment-section">
+            <div class="comment mb-3">
+                <div class="d-flex align-items-center mb-2">
+                    <div style="width: 10%;"> <div class="ratio ratio-1x1">
+                            <img src="assets/images/example.png" 
+                                 class="rounded-circle object-fit-cover" 
+                                 alt="$recipeChefName profile picture">
+                        </div>
                     </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
+                    <p class="card-text fw-bold ms-2 mb-0">$commenterName</p>
                 </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
+                
+                <p class="card-text mb-1">$commentText</p>
+                <p class="text-body-secondary fw-light small text-end">$commentDate</p>
+                
+                <div class="mb-3">
+                    <a href="#" class="link-underline small">Se alla kommentarer</a>
                 </div>
-              </div>
             </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
+            <div class="input-group">
+                <textarea class="form-control small" id="commentTextArea" rows="2" placeholder="Vad tyckte du om receptet?"></textarea>
+                <button class="btn btn-primary" type="button">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
             </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg
-                  aria-label="Placeholder: Thumbnail"
-                  class="bd-placeholder-img card-img-top"
-                  height="225"
-                  preserveAspectRatio="xMidYMid slice"
-                  role="img"
-                  width="100%"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Call to action -->
-          <div class="text-end">
+        </div>
+    </div>
+</div>
+    </div>
+        </div>
+        <!-- Call to action -->
+          <div class="text-end mt-4 ">
               <a href="#" class="btn btn-primary my-2">Bläddra i hela kokboken</a>
               <a href="#" class="btn btn-secondary my-2">Lägg upp recept</a>
-</div>
-        </div>
-        
+            </div>
       </div>
-
-
+</div>
 </body>
-
 </html>
