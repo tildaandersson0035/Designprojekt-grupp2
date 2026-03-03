@@ -129,7 +129,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
           <!-- Kort 1 -->
             <div class="card shadow-sm h-100" style="z-index: 2; width: 50%; transform: translateY(-10px); margin-right: -20px;">
             <div class="text-center">
-                <h3 class="card-title mt-4">$recipieTitle</h3>
+                <h3 class="card-title mt-4">$recipeTitle</h3>
                 <div class="container">
     <div class="d-flex align-items-center justify-content-center">
         <div style="width: 7%;">
@@ -154,7 +154,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                 <div class="container d-flex justify-content-center">
                     <div style="width: 50%;">
                         <div class="ratio ratio-1x1">
-                            <img src="assets/images/example.png" class="rounded-circle object-fit-cover" alt="recipieTitle>">
+                            <img src="assets/images/example.png" class="rounded-circle object-fit-cover" alt="recipeTitle>">
                         </div>
                     </div>
                 </div>
@@ -162,10 +162,10 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                 <div class="card-body">
 
                   <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-                  <small class="text-body-secondary">$recipieKitchen</small>
-                  <small class="text-body-secondary">$recipieProtein</small>
-                  <small class="text-body-secondary">$recipieDifficulty</small>
-                    <small class="text-body-secondary">$recipieTime</small>
+                  <small class="text-body-secondary">$recipeKitchen</small>
+                  <small class="text-body-secondary">$recipeProtein</small>
+                  <small class="text-body-secondary">$recipeDifficulty</small>
+                    <small class="text-body-secondary">$recipeTime</small>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
 <div class="card shadow-sm ms-3 h-100" style="z-index: 1; width: 50%; margin-top: 10px;">
     <div class="card-body">
         <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-            $recipieDescription
+            $recipeDescription
         </p>
         <div class="mb-3">
             <a href="#" class="link-underline">Se recept</a>
@@ -217,7 +217,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
           <!-- Kort 1 -->
             <div class="card shadow-sm h-100" style="z-index: 2; width: 50%; transform: translateY(-10px); margin-right: -20px;">
             <div class="text-center">
-                <h3 class="card-title mt-4">$recipieTitle</h3>
+                <h3 class="card-title mt-4">$recipeTitle</h3>
                 <div class="container">
     <div class="d-flex align-items-center justify-content-center">
         
@@ -245,7 +245,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                 <div class="container d-flex justify-content-center">
                     <div style="width: 50%;">
                         <div class="ratio ratio-1x1">
-                            <img src="assets/images/example.png" class="rounded-circle object-fit-cover" alt="recipieTitle>">
+                            <img src="assets/images/example.png" class="rounded-circle object-fit-cover" alt="recipeTitle">
                         </div>
                     </div>
                 </div>
@@ -253,10 +253,10 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
                 <div class="card-body">
 
                   <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-                  <small class="text-body-secondary">$recipieKitchen</small>
-                  <small class="text-body-secondary">$recipieProtein</small>
-                  <small class="text-body-secondary">$recipieDifficulty</small>
-                    <small class="text-body-secondary">$recipieTime</small>
+                  <small class="text-body-secondary">$recipeKitchen</small>
+                  <small class="text-body-secondary">$recipeProtein</small>
+                  <small class="text-body-secondary">$recipeDifficulty</small>
+                    <small class="text-body-secondary">$recipeTime</small>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
 <div class="card shadow-sm ms-3 h-100" style="z-index: 1; width: 50%; margin-top: 10px;">
     <div class="card-body">
         <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-            $recipieDescription
+            $recipeDescription
         </p>
         
         <div class="mb-3">
