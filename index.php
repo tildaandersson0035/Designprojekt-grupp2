@@ -7,6 +7,10 @@ $months_sv = [
 ]; // Månadsnamn på svenska
 $monthNumber = date('n'); // Hämtar aktuell månad som nummer
 $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
+// User info
+require_once 'assets/functions/user_select-id.php';
+// Header
+require_once 'assets/includes/header.php';
 ?>
 
 <!DOCTYPE html>
