@@ -1,0 +1,23 @@
+/* Bakgrund */
+body {
+    background-color: #FDF9F3;
+}
+
+/* FAQ bakgrund */
+.FAQ {
+    background-color: #FFF4D2;
+}
+
+/* Om oss bakgrund */
+.about {
+    background-color: #FFF4D2;
+}
+
+/* Knapp kontaktformulär */
+.send {
+    background-color: #f8cf54;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
