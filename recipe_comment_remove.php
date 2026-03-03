@@ -3,14 +3,10 @@
 require_once 'assets/includes/display_errors.php';
 // Database connection
 require_once 'assets/config/db.php';
-// Update receipe
-require_once 'assets/functions/recipie_update.php';
-// View receipe comments
-require_once 'assets/functions/recipie__comment_select.php';
-// Add receipe comment
-require_once 'assets/functions/recipie_comment_add.php';
-// Recipie-id
-require_once 'assets/functions/recipie_select-id.php';
+// Delete receipe comment
+require_once 'assets/functions/recipe_comment_delete.php';
+// View receipe comment
+require_once 'assets/functions/recipe__comment_select-id.php';
 // User-id 
 require_once 'assets/functions/user_select-id.php';
 // Header

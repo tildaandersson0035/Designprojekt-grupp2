@@ -3,12 +3,12 @@
 require_once 'assets/includes/display_errors.php';
 // Database connection
 require_once 'assets/config/db.php';
-// Add receipe
-require_once 'assets/functions/recipie_insert.php';
-// View receipe comments
-require_once 'assets/functions/recipie__comment_select.php';
-// Recipie -id
-require_once 'assets/functions/recipie_select-id.php';
+// View recepe comments
+require_once 'assets/functions/recipe__comment_select.php';
+// Add recepe comment
+require_once 'assets/functions/recipe_comment_add.php';
+// Recipe-id
+require_once 'assets/functions/recipe_select-id.php';
 // User-id 
 require_once 'assets/functions/user_select-id.php';
 // Header

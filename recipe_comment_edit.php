@@ -3,8 +3,10 @@
 require_once 'assets/includes/display_errors.php';
 // Database connection
 require_once 'assets/config/db.php';
-// Recipies all
-require_once 'assets/functions/recipie_select.php';
+// Update receipe comment
+require_once 'assets/functions/recipe_comment_update.php';
+// View receipe comment
+require_once 'assets/functions/recipe__comment_select-id.php';
 // User-id 
 require_once 'assets/functions/user_select-id.php';
 // Header

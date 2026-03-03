@@ -3,10 +3,8 @@
 require_once 'assets/includes/display_errors.php';
 // Database connection
 require_once 'assets/config/db.php';
-// Delete receipe comment
-require_once 'assets/functions/recipie_comment_delete.php';
-// View receipe comment
-require_once 'assets/functions/recipie__comment_select-id.php';
+// Recipes all
+require_once 'assets/functions/recipe_select.php';
 // User-id 
 require_once 'assets/functions/user_select-id.php';
 // Header
