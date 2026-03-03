@@ -6,7 +6,7 @@ require_once 'assets/includes/display_errors.php';
 // Opens database connection
 require_once 'assets/config/db.php';
 // Process login data to database
-require_once 'assets/functions/session.login.php';
+require_once 'assets/functions/user_session.login.php';
 ?>
 
 <!DOCTYPE html>
