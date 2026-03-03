@@ -1,6 +1,6 @@
 <?php
 // User info
-require_once 'assets/functions/select-id.php';
+require_once 'assets/functions/user_select-id.php';
 // Header
 require_once 'assets/includes/header.php';
 ?>
