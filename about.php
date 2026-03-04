@@ -86,8 +86,8 @@ require_once 'assets/includes/header.php';
                     <!-- Kontaktinfo -->
                     <div class="container mt-4 bg-white rounded-3 p-4">
                         <h3 class="mb-4 fs-5 text">Kontaktinformation</h3>
-                        <p>kundservice@chefskiss.se</p>
-                        <p>070-000 00 00</p>
+                        <p> <i class="fa-solid fa-envelope"></i> kundservice@chefskiss.se</p>
+                        <p> <i class="fa-solid fa-phone"></i> 070-000 00 00</p>
                     </div>
                 </div>
             </div>
@@ -130,15 +130,9 @@ require_once 'assets/includes/header.php';
     <!-- Om oss -->
     <div class="container-fluid text-center about mt-5 py-5">
         <div class="row justify-content-center">
-            <div class="col-5">
+            <div class="col-6">
                 <h2 class="mb-4">Om oss</h2>
-                <p>Chef's kiss är en passionerad matlagningsplattform som strävar efter att göra matlagning roligare
-                    och
-                    enklare för alla. Vi erbjuder ett brett utbud av recept, tips och inspiration för både nybörjare
-                    och erfarna kockar. Vårt mål är att hjälpa dig att upptäcka nya smaker, förbättra dina
-                    matlagningsfärdigheter
-                    och göra varje måltid till en minnesvärd upplevelse. Utforska våra recept och hitta din nya
-                    favoritdrätt idag!</p>
+                <p> Chef's Kiss är en passionerad matlagningsplattform och en levande digital kokbok som vi utvecklar tillsammans. Vi strävar efter att göra matlagning roligare genom att låta dig dela, spara och iterera recept för att skapa dina egna versioner. Vårt mål är att inspirera både nybörjare och erfarna kockar att upptäcka nya smaker och ständigt förbättra varandras rätter. Utforska samlingen, bygg vidare på communityns idéer och hitta din nya favoritdrätt idag!</p>
             </div>
         </div>
     </div>
