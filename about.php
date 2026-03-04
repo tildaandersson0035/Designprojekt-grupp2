@@ -8,8 +8,8 @@ require_once 'assets/includes/header.php';
 <main class=background-about>
     <!-- FAQ och kontaktformulär -->
     <div class="container mt-5">
-        <h1 class="py-4 text-center">Hur kan vi hjälpa dig?</h1>
-        <div class="row justify-content-center">
+        <h1 class="py-4 text-center fw-semibold">Hur kan vi hjälpa dig?</h1>
+        <div class=" row justify-content-center">
             <div class="col-sm-3 p-4 FAQ rounded-3">
                 <h2 class="mb-4 text-center">Vanliga frågor</h2>
                 <div class="accordion ">
@@ -130,7 +130,7 @@ require_once 'assets/includes/header.php';
     <!-- Om oss -->
     <div class="container-fluid text-center about mt-5 py-5">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-6 text-white">
                 <h2 class="mb-4">Om oss</h2>
                 <p> Chef's Kiss är en passionerad matlagningsplattform och en levande digital kokbok som vi utvecklar tillsammans. Vi strävar efter att göra matlagning roligare genom att låta dig dela, spara och iterera recept för att skapa dina egna versioner. Vårt mål är att inspirera både nybörjare och erfarna kockar att upptäcka nya smaker och ständigt förbättra varandras rätter. Utforska samlingen, bygg vidare på communityns idéer och hitta din nya favoritdrätt idag!</p>
             </div>
