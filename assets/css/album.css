@@ -1,21 +1,21 @@
 /* Bakgrund */
-body {
-    background-color: #FDF9F3;
+.background-about {
+    background-color: #F2EBDD;
 }
 
 /* FAQ bakgrund */
 .FAQ {
-    background-color: #FFF4D2;
+    background-color: #E5CBA0;
 }
 
 /* Om oss bakgrund */
 .about {
-    background-color: #FFF4D2;
+    background-color: #E5CBA0;
 }
 
 /* Knapp kontaktformulär */
 .send {
-    background-color: #f8cf54;
+    background-color: #E29A2A;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

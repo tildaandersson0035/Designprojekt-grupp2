@@ -5,14 +5,14 @@ require_once 'assets/functions/user_select-id.php';
 require_once 'assets/includes/header.php';
 ?>
 
-<main>
+<main class=background-about>
     <!-- FAQ och kontaktformulär -->
     <div class="container mt-5">
-        <h1 class="mb-4 text-center">Hur kan vi hjälpa dig?</h1>
+        <h1 class="py-4 text-center">Hur kan vi hjälpa dig?</h1>
         <div class="row justify-content-center">
             <div class="col-sm-3 p-4 FAQ rounded-3">
                 <h2 class="mb-4 text-center">Vanliga frågor</h2>
-                <div class="accordion">
+                <div class="accordion ">
                     <!-- Fråga 1 -->
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -67,9 +67,9 @@ require_once 'assets/includes/header.php';
                         </div>
                     </div>
                     <!-- Fråga 4 -->
-                    <div class="accordion-item">
+                    <div class="accordion-item rounded-bottom-3">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            <button class="accordion-button collapsed rounded-bottom-3" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 Hur sparar jag mina favoritrecept?
                             </button>
@@ -123,7 +123,7 @@ require_once 'assets/includes/header.php';
                     <label for="message" class="form-label">Meddelande</label>
                     <textarea class="form-control" id="message" rows="5"></textarea>
                 </div>
-                <button type="submit" class="send">Skicka</button>
+                <button type="submit" class="send text-white">Skicka</button>
             </div>
         </div>
     </div>
