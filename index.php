@@ -257,7 +257,6 @@ require_once 'assets/includes/header.php';
                 </div>
               </div>
 
-
               <!-- Kort 2 -->
 <div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
     <div class="card-body">
@@ -274,14 +273,7 @@ require_once 'assets/includes/header.php';
     </div>
     <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
             En härligt krämig carbonara med krispigt stekt bacon, parmesanost och len grädde som toppas att nymalen svartpeppar och rucola. Lika god en fredagskväll eller som till lyxlunch på helgen.
-        
-        
-        
           </p>
-        
-           
-        
-    
         <hr class="my-3" />
         <div class="comment-section mb-3">
 
