@@ -130,7 +130,8 @@ require_once 'assets/includes/header.php';
         </div>
     </div>
     <!-- Om oss -->
-    <div class="container-fluid text-center bg-dark mt-5 py-5">
+    <img src="assets/images/awning_blue.svg" class="w-100 d-block rotate mt-5" alt="awning graphic">
+    <div class="container-fluid text-center bg-dark py-4">
         <div class="row justify-content-center">
             <div class="col-6 text-white">
                 <h2 class="mb-4 text-primary fw-bold">Om oss</h2>
