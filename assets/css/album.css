@@ -11,6 +11,7 @@
     --bs-secondary-rgb: 253, 251, 210;
     --bs-dark: #001A2B;
     --bs-dark-rgb: 0, 26, 43;
+    --ck-navy: #0b2230;
     --bs-dark-hover: #000000;
     --bs-light: #FAF9EF;
     --bs-light-rgb: 250, 249, 239;
@@ -268,4 +269,20 @@
     .ck-nav {
         justify-content: center;
     }
+}
+
+/* FOOTER */
+
+.ck-footer {
+    background: var(--ck-navy);
+}
+
+/* FOOTER SOCIAL ICONS */
+
+.ck-footer-social a {
+    color: white;
+}
+
+.ck-footer-social a:hover {
+    color: var(--ck-red);
 }

@@ -1,20 +1,20 @@
-<footer class="py-5 text-center text-white" style="background:#0b2230;">
+<footer class="ck-footer py-5 text-center text-white">
 
     <div class="container">
 
-        <div class="mb-3">
-            <a href="/about.php" class="text-white text-decoration-none">Om oss</a> |
-            <a href="#" class="text-white text-decoration-none">Kontakt</a> |
-            <a href="#" class="text-white text-decoration-none">Cookies</a> |
-            <a href="#" class="text-white text-decoration-none">Användarvillkor</a> |
-            <a href="#" class="text-white text-decoration-none">FAQ</a> |
-            <a href="#" class="text-white text-decoration-none">Hjälp</a>
+        <div class="ck-footer-links mb-3">
+            <a href="/about.php">Om oss</a>
+            <a href="#">Kontakt</a>
+            <a href="#">Cookies</a>
+            <a href="#">Användarvillkor</a>
+            <a href="#">FAQ</a>
+            <a href="#">Hjälp</a>
         </div>
 
-        <div class="mb-3">
-            <i class="fa-brands fa-tiktok me-3"></i>
-            <i class="fa-brands fa-facebook me-3"></i>
-            <i class="fa-brands fa-instagram"></i>
+        <div class="ck-footer-social mb-3">
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
 
         <p class="small mb-0">
