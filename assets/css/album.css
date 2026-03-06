@@ -176,9 +176,14 @@
 }
 
 
-/* ========================= */
-/* HEADER DESIGN */
-/* ========================= */
+/* Generel styles */
+html,
+body {
+    height: 100%;
+}
+
+/* HEADER & FOOTER DESIGN */
+
 
 :root {
     --ck-navy: #0b2230;
@@ -231,9 +236,8 @@
     color: white;
 }
 
-/* ========================= */
-/* FOOTER DESIGN */
-/* ========================= */
+
+/* FOOTER */
 
 .ck-footer {
     background: var(--ck-navy);

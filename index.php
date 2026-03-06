@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Omvandlare för att visa dynamiskt månadsnamn på svenska
 $months_sv = [
   1 => 'januari',
@@ -18,7 +19,7 @@ $monthNumber = date('n'); // Hämtar aktuell månad som nummer
 $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
 // User info
 require_once 'assets/functions/user_select-id.php';
-// Header
+// Header & footer
 require_once 'assets/includes/header.php';
 ?>
 
