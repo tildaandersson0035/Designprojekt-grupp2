@@ -32,48 +32,45 @@ require_once 'assets/functions/user_session.login.php';
 <body>
 
     <header class="ck-sticky">
-
         <div class="ck-hero">
+            <div class="container py-2">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
 
-            <div class="container ck-header-row">
+                    <!-- Logo + tagline -->
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="ck-logo">
+                            <a href="/index.php">
+                                <img src="/assets/images/logo.svg" alt="Chef's Kiss">
+                            </a>
+                        </div>
 
-                <!-- LOGO -->
-                <div class="ck-logo">
-                    <a href="/index.php">
-                        <img src="/assets/images/logo.svg" alt="Chef's Kiss">
-                    </a>
+                        <p class="ck-tagline mb-0 text-white">
+                            Dela dina <span class="ck-highlight">äventyr</span> från köket
+                        </p>
+                    </div>
+
+                    <!-- Navigation -->
+                    <nav class="d-flex flex-wrap align-items-center gap-2">
+                        <a class="ck-pill" href="/index.php">
+                            <i class="fa-solid fa-house"></i> Hem
+                        </a>
+
+                        <a class="ck-pill" href="/recipe_view_all.php">
+                            <i class="fa-solid fa-utensils"></i> Recept
+                        </a>
+
+                        <a class="ck-pill" href="/user_add.php">
+                            <i class="fa-solid fa-user"></i> Registrera dig
+                        </a>
+
+                        <a class="ck-pill" href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i> Sök
+                        </a>
+                    </nav>
+
                 </div>
-
-                <!-- TAGLINE -->
-                <p class="ck-tagline">
-                    Dela dina <span class="ck-highlight">äventyr</span> från köket
-                </p>
-
-                <!-- NAVIGATION -->
-                <nav class="ck-nav">
-
-                    <a class="ck-pill" href="/index.php">
-                        <i class="fa-solid fa-house"></i> Hem
-                    </a>
-
-                    <a class="ck-pill" href="/recipe_view_all.php">
-                        <i class="fa-solid fa-utensils"></i> Recept
-                    </a>
-
-                    <a class="ck-pill" href="/user_add.php">
-                        <i class="fa-solid fa-user"></i> Registrera dig
-                    </a>
-
-                    <a class="ck-pill" href="#">
-                        <i class="fa-solid fa-magnifying-glass"></i> Sök
-                    </a>
-
-                </nav>
-
             </div>
-
         </div>
-
     </header>
 
 </body>

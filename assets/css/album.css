@@ -11,7 +11,6 @@
     --bs-secondary-rgb: 253, 251, 210;
     --bs-dark: #001A2B;
     --bs-dark-rgb: 0, 26, 43;
-    --ck-navy: #0b2230;
     --bs-dark-hover: #000000;
     --bs-light: #FAF9EF;
     --bs-light-rgb: 250, 249, 239;
@@ -197,45 +196,24 @@
 .ck-hero {
     background: var(--ck-navy);
     color: white;
-    padding: 8px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
-}
-
-/* header layout */
-.ck-header-row {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    align-items: center;
-    gap: 2rem;
 }
 
 /* logo */
 .ck-logo img {
     height: 55px;
     display: block;
-    margin-bottom: 5px;
 }
 
 /* tagline */
 .ck-tagline {
-    text-align: center;
     font-size: 1rem;
     font-weight: 500;
-    margin: 0;
-    color: white;
 }
 
 /* highlighted word */
 .ck-highlight {
     color: #e23a3c;
-}
-
-/* navigation */
-.ck-nav {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
 }
 
 /* nav buttons */
@@ -253,36 +231,40 @@
     color: white;
 }
 
-/* responsive */
-@media (max-width: 900px) {
-    .ck-header-row {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .ck-logo {
-        display: flex;
-        justify-content: center;
-    }
-
-    .ck-nav {
-        justify-content: center;
-    }
-}
-
-/* FOOTER */
+/* ========================= */
+/* FOOTER DESIGN */
+/* ========================= */
 
 .ck-footer {
     background: var(--ck-navy);
 }
 
-/* FOOTER SOCIAL ICONS */
+.ck-footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.ck-footer-links a:hover {
+    color: var(--ck-red);
+}
 
 .ck-footer-social a {
     color: white;
+    font-size: 1.25rem;
+    transition: 0.2s ease;
 }
 
 .ck-footer-social a:hover {
     color: var(--ck-red);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .ck-logo img {
+        height: 48px;
+    }
+
+    .ck-tagline {
+        font-size: 0.95rem;
+    }
 }

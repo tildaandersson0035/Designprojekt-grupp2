@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="ck-footer-links mb-3">
+        <div class="d-flex justify-content-center flex-wrap gap-3 mb-3 ck-footer-links">
             <a href="/about.php">Om oss</a>
             <a href="#">Kontakt</a>
             <a href="#">Cookies</a>
@@ -11,7 +11,7 @@
             <a href="#">Hjälp</a>
         </div>
 
-        <div class="ck-footer-social mb-3">
+        <div class="d-flex justify-content-center gap-3 mb-3 ck-footer-social">
             <a href="#"><i class="fa-brands fa-tiktok"></i></a>
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
