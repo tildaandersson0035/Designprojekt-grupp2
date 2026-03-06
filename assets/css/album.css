@@ -182,7 +182,14 @@ body {
     height: 100%;
 }
 
-/* HEADER & FOOTER DESIGN */
+/* Tar hänsyn till footer och lämnar lite utrymme*/
+main {
+    min-height: calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
 
 
 :root {
@@ -197,7 +204,7 @@ body {
     z-index: 1030;
 }
 
-/* header background */
+/* header bakgrudnsfärg och boxskugga */
 .ck-hero {
     background: var(--ck-navy);
     color: white;
@@ -239,25 +246,31 @@ body {
 
 /* FOOTER */
 
+/* bakgrundsfärg */
 .ck-footer {
     background: var(--ck-navy);
 }
 
+/* färg och färganimering, länkar utan understrykning */
 .ck-footer-links a {
     color: white;
     text-decoration: none;
+    transition: 0.2s ease;
 }
 
+/* länkar blir röda vid hover */
 .ck-footer-links a:hover {
     color: var(--ck-red);
 }
 
+/* färg, storlek, färganimering sociala medier ikoner */
 .ck-footer-social a {
     color: white;
     font-size: 1.25rem;
     transition: 0.2s ease;
 }
 
+/* ikoner blir röda vid hover */
 .ck-footer-social a:hover {
     color: var(--ck-red);
 }
