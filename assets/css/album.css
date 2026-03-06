@@ -174,3 +174,98 @@
     background-size: cover;
     background-position: center;
 }
+
+
+/* ========================= */
+/* HEADER DESIGN */
+/* ========================= */
+
+:root {
+    --ck-navy: #0b2230;
+    --ck-red: #b2191b;
+}
+
+/* sticky header */
+.ck-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+/* header background */
+.ck-hero {
+    background: var(--ck-navy);
+    color: white;
+    padding: 8px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
+}
+
+/* header layout */
+.ck-header-row {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* logo */
+.ck-logo img {
+    height: 55px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* tagline */
+.ck-tagline {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: white;
+}
+
+/* highlighted word */
+.ck-highlight {
+    color: #e23a3c;
+}
+
+/* navigation */
+.ck-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+/* nav buttons */
+.ck-pill {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 6px 14px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.ck-pill:hover {
+    background: var(--ck-red);
+    color: white;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .ck-header-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .ck-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ck-nav {
+        justify-content: center;
+    }
+}

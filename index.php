@@ -328,6 +328,10 @@ require_once 'assets/includes/header.php';
       </div>
     </div>
   </div>
+  <?php
+  // Footer
+  require_once 'assets/includes/footer.php';
+  ?>
 </body>
 
 </html>

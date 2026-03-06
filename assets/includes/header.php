@@ -6,10 +6,10 @@ session_start();
 require_once 'display_errors.php';
 
 // Opens database connection
-require_once '../config/db.php';
+require_once 'assets/config/db.php';
 
 // Process login data to database
-require_once '../functions/user_session_login.php';
+require_once 'assets/functions/user_session.login.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,70 +20,13 @@ require_once '../functions/user_session_login.php';
     <title>Chef's Kiss</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/album.css">
-
-    <style>
-        :root {
-            --ck-navy: #0b2230;
-            --ck-cream: #f3f0e7;
-            --ck-red: #b2191b;
-        }
-
-        /* sticky header */
-        .ck-sticky {
-            position: sticky;
-            top: 0;
-            z-index: 1030;
-        }
-
-        /* hero section */
-        .ck-hero {
-            min-height: 320px;
-            color: white;
-            position: relative;
-            background: url("../images/hero-kitchen.jpg") center/cover no-repeat;
-        }
-
-        /* vertical brand */
-        .ck-brand-rail {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 70px;
-            display: flex;
-            justify-content: center;
-            padding-top: 20px;
-            background: rgba(11, 34, 48, .4);
-        }
-
-        .brand-vertical {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        /* navigation pills */
-        .ck-pill {
-            background: rgba(11, 34, 48, .7);
-            border-radius: 999px;
-            padding: 6px 14px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .ck-pill:hover {
-            background: var(--ck-red);
-        }
-    </style>
-
+    <link rel="stylesheet" href="/assets/css/album.css">
 </head>
 
 <body>
@@ -92,47 +35,40 @@ require_once '../functions/user_session_login.php';
 
         <div class="ck-hero">
 
-            <div class="ck-brand-rail">
-                <div class="brand-vertical">
-                    <i class="fa-solid fa-hat-chef"></i> CHEF'S KISS
+            <div class="container ck-header-row">
+
+                <!-- LOGO -->
+                <div class="ck-logo">
+                    <a href="/index.php">
+                        <img src="/assets/images/logo.svg" alt="Chef's Kiss">
+                    </a>
                 </div>
-            </div>
 
-            <nav class="container pt-3 d-flex justify-content-center gap-3">
+                <!-- TAGLINE -->
+                <p class="ck-tagline">
+                    Dela dina <span class="ck-highlight">äventyr</span> från köket
+                </p>
 
-                <a class="ck-pill" href="/index.php">
-                    <i class="fa-solid fa-house"></i> Hem
-                </a>
+                <!-- NAVIGATION -->
+                <nav class="ck-nav">
 
-                <a class="ck-pill" href="/recipe_view_all.php">
-                    <i class="fa-solid fa-utensils"></i> Recept
-                </a>
+                    <a class="ck-pill" href="/index.php">
+                        <i class="fa-solid fa-house"></i> Hem
+                    </a>
 
-                <a class="ck-pill" href="/recipe_add.php">
-                    <i class="fa-solid fa-plus"></i> Nytt
-                </a>
+                    <a class="ck-pill" href="/recipe_view_all.php">
+                        <i class="fa-solid fa-utensils"></i> Recept
+                    </a>
 
-                <a class="ck-pill" href="#">
-                    <i class="fa-solid fa-magnifying-glass"></i> Sök
-                </a>
+                    <a class="ck-pill" href="/user_add.php">
+                        <i class="fa-solid fa-user"></i> Registrera dig
+                    </a>
 
-            </nav>
+                    <a class="ck-pill" href="#">
+                        <i class="fa-solid fa-magnifying-glass"></i> Sök
+                    </a>
 
-            <div class="text-center pt-5">
-
-                <h2>
-                    Dela dina <span style="color:#e23a3c;">äventyr</span> från köket
-                </h2>
-
-                <div class="mt-3">
-
-                    <a class="btn btn-light" href="/recipe_view_all.php">Alla recept</a>
-
-                    <a class="btn btn-danger" href="/user_add.php">Registrera dig</a>
-
-                    <a class="btn btn-outline-light" href="/recipe_add.php">Nytt recept</a>
-
-                </div>
+                </nav>
 
             </div>
 
@@ -140,4 +76,6 @@ require_once '../functions/user_session_login.php';
 
     </header>
 
-    <body>
+</body>
+
+</html>
