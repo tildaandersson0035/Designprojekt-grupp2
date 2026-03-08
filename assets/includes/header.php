@@ -1,6 +1,4 @@
 <?php
-// Init session management
-session_start();
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
 // Opens database connection
@@ -22,6 +20,8 @@ require_once 'assets/functions/user_session.login.php';
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/album.css">
 </head>
->body<>/body<>
+<body>
+    <header>
 
-</html>
+        </header>
+  

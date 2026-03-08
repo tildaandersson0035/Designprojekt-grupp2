@@ -1,4 +1,6 @@
 <?php
+// Opens database connection 
+require_once 'assets/config/db.php';
 // Omvandlare för att visa dynamiskt månadsnamn på svenska
 $months_sv = [
   1 => 'januari',
@@ -21,34 +23,42 @@ require_once 'assets/functions/user_select-id.php';
 // Header
 require_once 'assets/includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="sv">
-
-<head>
-  <meta charset="utf-8">
-  <title>Chef's Kiss</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/css/all.min.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/album.css">
-</head>
-
-<body>
-  <!-- Registera dig och intro -->
-  <div class="start-background">
-    <div class="container px-4 pt-5">
-      <div class="row align-items-center g-lg-5 pt-5">
-        <!-- introtext -->
-        <div class="col-lg-8 text-center text-lg-start">
-          <h1 class="col-lg-10 display-5 fw-bold 1h-1 mb-3 text-light">
-            Vad har du lagat som förtjänar en <emp class="text-primary">chef's kiss</emp>?
-          </h1>
-          <p class="col-lg-10 fs-5 text-light">
-            Dyk in i den sociala kokboken där matälskare som du och jag inspirerar varandra till nya höjder av matlagning och diskberg!
-          </p>
+<main>
+    <!-- Registera dig och intro -->
+<div class="start-background">
+      <div class="container px-4 pt-5">
+        <div class="row align-items-center g-lg-5 pt-5">
+            <!-- introtext -->
+          <div class="col-lg-8 text-center text-lg-start">
+            <h1 class="col-lg-10 display-5 fw-bold 1h-1 mb-3 text-light">
+               Vad har du lagat som förtjänar en <emp class= "text-primary">chef's kiss</emp>?
+            </h1>
+            <p class="col-lg-10 fs-5 text-light">
+             Dyk in i den sociala kokboken där matälskare som du och jag inspirerar varandra till nya höjder av matlagning och diskberg!
+            </p>
+          </div>
+          <!-- Registera dig ruta -->
+          <div class="col-md-10 mx-auto col-lg-4">
+            <form class="p-4 p-md-5 border rounded-3 bg-light ">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                <label for="floatingInput">E-post</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingPassword"
+                  placeholder="Password"
+                />
+                <label for="floatingPassword">Lösenord</label>
+              </div>
+              <button class="w-100 btn btn-lg btn-dark mb-2 rounded-pill " type="submit">
+                Logga in
+              </button>
+              <small class="text-body-secondary"> Första gången? <a href="register.php">Registera dig här!</a></small>
+            </form>
+          </div>
         </div>
         <!-- Registera dig ruta -->
         <div class="col-md-10 mx-auto col-lg-4">
@@ -268,38 +278,30 @@ require_once 'assets/includes/header.php';
             </div>
           </div>
 
+              <!-- Kort 2 -->
+<div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
+    <div class="card-body">
 
-          <!-- Kort 2 -->
-          <div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
-            <div class="card-body">
+    <div class="d-flex ">
+        <div style="width: 10%;">
+            <div class="ratio ratio-1x1">
+                <img src="assets/images/profilepictures/Picture1.png" 
+                     class="rounded-circle object-fit-cover" 
+                     alt=" $recipeChefName profile picture">
+            </div>
+        </div>
+        <p class="card-text fw-bold ms-3 mb-0"> Per Pasta</p> 
+    </div>
+    <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+            En härligt krämig carbonara med krispigt stekt bacon, parmesanost och len grädde som toppas att nymalen svartpeppar och rucola. Lika god en fredagskväll eller som till lyxlunch på helgen.
+          </p>
+        <hr class="my-3" />
+        <div class="comment-section mb-3">
 
-              <div class="d-flex ">
-                <div style="width: 10%;">
-                  <div class="ratio ratio-1x1">
-                    <img src="assets/images/profilepictures/Picture1.png"
-                      class="rounded-circle object-fit-cover"
-                      alt=" $recipeChefName profile picture">
-                  </div>
-                </div>
-                <p class="card-text fw-bold ms-3 mb-0"> Per Pasta</p>
-              </div>
-              <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-                En härligt krämig carbonara med krispigt stekt bacon, parmesanost och len grädde som toppas att nymalen svartpeppar och rucola. Lika god en fredagskväll eller som till lyxlunch på helgen.
-
-
-
-              </p>
-
-
-
-
-              <hr class="my-3" />
-              <div class="comment-section mb-3">
-
-                <div class="comment mb-3"> <!-- Kommentar 1 -->
-                  <div class="d-flex align-items-center mb-2">
-                    <div class="ratio ratio-1x1" style="width: 10%;">
-                      <img src="assets/images/profilepictures/Picture2.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
+            <div class="comment mb-3"> <!-- Kommentar 1 -->
+                <div class="d-flex align-items-center mb-2">
+                      <div class="ratio ratio-1x1" style="width: 10%;">
+                            <img src="assets/images/profilepictures/Picture2.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
                     </div>
                     <p class="card-text fw-bold ms-2 mb-0 small">Lisa Larsson</p>
                   </div>
@@ -316,8 +318,16 @@ require_once 'assets/includes/header.php';
                   <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Gjorde denna på en dejt, vi har 4 barn nu </p>
                 </div>
 
-                <a href="recept.php" class="link-underline stretched-link">Se alla kommentarer</a>
-              </div>
+                    <a href="recept.php" class="link-underline stretched-link">Se alla kommentarer</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+        <!-- Call to action -->
+          <div class="text-end mt-4 ">
+              <a href="recipe_add.php" class="btn btn-secondary text-dark my-2 rounded-pill">Lägg till eget recept <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="recipe_view_all.php" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -326,8 +336,10 @@ require_once 'assets/includes/header.php';
       <div class="text-end mt-4 ">
         <a href="#" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-    </div>
-  </div>
-</body>
+</div>
 
-</html>
+</main>
+<?php
+// footer
+require_once 'assets/includes/footer.php';
+?>
