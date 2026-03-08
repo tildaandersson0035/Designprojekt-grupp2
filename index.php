@@ -1,4 +1,6 @@
 <?php
+// Opens database connection 
+require_once 'assets/config/db.php';
 // Omvandlare för att visa dynamiskt månadsnamn på svenska
 $months_sv = [
     1 => 'januari', 2 => 'februari', 3 => 'mars', 4 => 'april',
@@ -12,20 +14,7 @@ require_once 'assets/functions/user_select-id.php';
 // Header
 require_once 'assets/includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="utf-8">
-    <title>Chef's Kiss</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/album.css">
-</head>
-<body>
+<main>
     <!-- Registera dig och intro -->
 <div class="start-background">
       <div class="container px-4 pt-5">
@@ -56,11 +45,9 @@ require_once 'assets/includes/header.php';
                 <label for="floatingPassword">Lösenord</label>
               </div>
               <button class="w-100 btn btn-lg btn-dark mb-2 rounded-pill " type="submit">
-                Registera
+                Logga in
               </button>
-              <small class="text-body-secondary"
-                >Genom att registrera dig godkänner du våra <a href="terms.html">användarvillkor.</a>
-                Redan medlem? <a href="log-in.html">logga in här.</a></small>
+              <small class="text-body-secondary"> Första gången? <a href="register.php">Registera dig här!</a></small>
             </form>
           </div>
         </div>
@@ -305,9 +292,14 @@ require_once 'assets/includes/header.php';
     </div>
         <!-- Call to action -->
           <div class="text-end mt-4 ">
-              <a href="#" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="recipe_add.php" class="btn btn-secondary text-dark my-2 rounded-pill">Lägg till eget recept <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="recipe_view_all.php" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
             </div>
       </div>
 </div>
-</body>
-</html>
+
+</main>
+<?php
+// footer
+require_once 'assets/includes/footer.php';
+?>
