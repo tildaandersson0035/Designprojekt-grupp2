@@ -1,4 +1,6 @@
 <?php
+// Start session FIRST before any other output
+session_start();
 // Opens database connection 
 require_once 'assets/config/db.php';
 // Omvandlare för att visa dynamiskt månadsnamn på svenska
@@ -18,11 +20,14 @@ $months_sv = [
 ]; // Månadsnamn på svenska
 $monthNumber = date('n'); // Hämtar aktuell månad som nummer
 $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
+// Gets monthly recipes from database
+require_once 'assets/functions/recipe_select_monthly.php';
 // User info
 require_once 'assets/functions/user_select-id.php';
 // Header
 require_once 'assets/includes/header.php';
 ?>
+
 <main>
     <!-- Registera dig och intro -->
 <div class="start-background">
@@ -127,216 +132,104 @@ require_once 'assets/includes/header.php';
   </div>
   <div class="container-fluid p-0">
     <img src="assets/images/awning_blue.svg" class="w-100 d-block" alt="awning graphic">
-  </div>
-  <!-- Månadens recept galleri -->
-  <div class="album py-5 bg-body-tertiary">
-    <!-- Månadens recept text -->
-    <div class="row py-lg-3">
-      <div class="col-lg-6 col-md-8 mx-auto text-center">
-        <h1 class="fw-regular">Månadens recept</h1>
-        <p class="lead text-body-secondary">
-          Utvalda gobitar att mumsa på i <?php echo $currentMonth; ?>.
-        </p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3">
-        <!-- Ett recept -->
-        <div class="d-flex align-items-stretch position-relative">
-
-          <!-- Kort 1 -->
-          <div class="card shadow-sm px-4 py-3" style="z-index: 2; width: 53%; transform: translateY(-10px); margin-right: -20px;">
-
-            <div class="text-center mb-3">
-              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-                <small class="text-body-secondary">Italienskt</small>
-                <small class="text-body-secondary">Fläsk</small>
-                <small class="text-body-secondary">Medium</small>
-                <small class="text-body-secondary">30 min</small>
-              </div>
-              <h3 class="card-title mt-4 mb-3">Pasta carbonara</h3>
-
-              <div class="container">
-              </div>
-              <div class="container text-center mt-4">
-                <div class="plate-container">
-                  <img src="photos/example.png" class="plate-border" alt="recipeTitle">
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="text-center mb-3">
-                  <p class="text-center "> <!-- Stjärnor för betyg  (behöver lägga till betyg från databasen och text för skärmläsare-->
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                    (45)
-                  </p>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-bookmark"></i></button>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-comment"></i></button>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-star"></i></button>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-solid fa-utensils"></i></button>
-                </div>
-                <a href="recept.php" class="link-underline stretched-link">Se recept</a>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Kort 2 -->
-          <div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
-            <div class="card-body">
-
-              <div class="d-flex ">
-                <div style="width: 10%;">
-                  <div class="ratio ratio-1x1">
-                    <img src="assets/images/profilepictures/Picture1.png"
-                      class="rounded-circle object-fit-cover"
-                      alt=" $recipeChefName profile picture">
-                  </div>
-                </div>
-                <p class="card-text fw-bold ms-3 mb-0"> Per Pasta</p>
-              </div>
-              <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-                En härligt krämig carbonara med krispigt stekt bacon, parmesanost och len grädde som toppas att nymalen svartpeppar och rucola. Lika god en fredagskväll eller som till lyxlunch på helgen.
-
-
-
-              </p>
-
-
-
-
-              <hr class="my-3" />
-              <div class="comment-section mb-3">
-
-                <div class="comment mb-3"> <!-- Kommentar 1 -->
-                  <div class="d-flex align-items-center mb-2">
-                    <div class="ratio ratio-1x1" style="width: 10%;">
-                      <img src="assets/images/profilepictures/Picture2.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
-                    </div>
-                    <p class="card-text fw-bold ms-2 mb-0 small">Lisa Larsson</p>
-                  </div>
-                  <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Carbonara med grädde? Nä nu räcker det</p>
-                </div>
-
-                <div class="comment mb-3"> <!-- Kommentar 2 -->
-                  <div class="d-flex align-items-center mb-2">
-                    <div class="ratio ratio-1x1" style="width: 10%;">
-                      <img src="assets/images/profilepictures/Picture3.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
-                    </div>
-                    <p class="card-text fw-bold ms-2 mb-0 small">Lennart Legend</p>
-                  </div>
-                  <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Gjorde denna på en dejt, vi har 4 barn nu </p>
-                </div>
-
-                <a href="recept.php" class="link-underline stretched-link">Se alla kommentarer</a>
-              </div>
-            </div>
+</div>
+      <!-- Månadens recept galleri -->
+       <div class="row py-lg-3 mt-5">
+          <div class="col-lg-6 col-md-8 mx-auto text-center">
+            <h1 class="fw-regular">Månadens recept</h1>
+            <p class="lead text-body-secondary">
+              Utvalda gobitar att mumsa på i <?php echo $currentMonth; ?>. 
+            </p>
           </div>
         </div>
-        <!-- Ett recept -->
-        <div class="d-flex align-items-stretch position-relative">
+       <div class="container mt-5">
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3">
+       <?php
+// Checks whether database is empty
+if ($stmt->rowCount() > 0) {
+// Get items from database
+while ($row = $stmt->fetch()) {
+    ?>
+      <div class="col d-flex align-items-stretch position-relative mb-4">
 
-          <!-- Kort 1 -->
-          <div class="card shadow-sm px-4 py-3" style="z-index: 2; width: 53%; transform: translateY(-10px); margin-right: -20px;">
+                    <div class="card shadow-sm px-4 py-3" style="z-index: 2; width: 53%; transform: translateY(-10px); margin-right: -20px;">
+                        <div class="text-center mb-3">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                                <small class="text-body-secondary"><?php echo htmlspecialchars($row['recipeCuisine']); ?></small>
+                                <small class="text-body-secondary"><?php echo htmlspecialchars($row['recipeProtein']); ?></small>
+                                <small class="text-body-secondary"><?php echo htmlspecialchars($row['recipeDifficulty']); ?></small>
+                                <small class="text-body-secondary"><?php echo htmlspecialchars($row['recipeTime']); ?> min</small>
+                            </div>
+                            <h3 class="card-title mt-4 mb-3"><?php echo htmlspecialchars($row['recipeTitle']); ?></h3>
+                            
+                            <div class="container text-center mt-4">
+                                <div class="plate-container">
+                                    <img src="<?php echo htmlspecialchars($row['recipePhoto']); ?>" class="plate-border" alt="<?php echo htmlspecialchars($row['recipeTitle']); ?>">
+                                </div>
+                            </div>
 
-            <div class="text-center mb-3">
-              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-                <small class="text-body-secondary">Italienskt</small>
-                <small class="text-body-secondary">Fläsk</small>
-                <small class="text-body-secondary">Medium</small>
-                <small class="text-body-secondary">30 min</small>
-              </div>
-              <h3 class="card-title mt-4 mb-3">Pasta carbonara</h3>
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <p class="text-center">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        (45)
+                                    </p>
+                                    <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-bookmark"></i></button>
+                                    <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-comment"></i></button>
+                                    <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-star"></i></button>
+                                    <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-solid fa-utensils"></i></button>
+                                </div>
+                                <a href="recipe_view_one.php?recipeID=<?php echo $row['recipeID']; ?>" class="link-underline stretched-link">Se recept</a>
+                            </div>
+                        </div>
+                    </div>
 
-              <div class="container">
-              </div>
-              <div class="container text-center mt-4">
-                <div class="plate-container">
-                  <img src="photos/example.png" class="plate-border" alt="recipeTitle">
+                    <div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div style="width: 25%;">
+                                    <div class="ratio ratio-1x1">
+                                        <img src="assets/images/profilepictures/Picture<?php echo htmlspecialchars($row['userPicture']); ?>.png" class="rounded-circle object-fit-cover" alt="Profilbild">
+                                    </div>
+                                </div>
+                                <p class="card-text fw-bold ms-3 mb-0"><?php echo htmlspecialchars($row['userFirstname'] . ' ' . $row['userSurname']); ?></p> 
+                            </div>
+                            <a href="recipe_view_one.php?recipeID=<?php echo $row['recipeID']; ?>" class="text-start text-decoration-none text-reset">
+                            <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                                <?php echo htmlspecialchars($row['recipeDescription']); ?>
+                            </p></a>
+                            
+                            <hr class="my-3" />
+                            
+                            <div class="comment-section mb-3">
+                                <div class="comment mb-3">
+                                    <p class="card-text mb-1 small">Kommentarer</p>
+                                </div>
+                                <a href="recipe_view_one.php?recipeID=<?php echo $row['recipeID']; ?>" class="link-underline">Se alla kommentarer</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="text-center mb-3">
-                  <p class="text-center "> <!-- Stjärnor för betyg  (behöver lägga till betyg från databasen och text för skärmläsare-->
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                    (45)
-                  </p>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-bookmark"></i></button>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-comment"></i></button>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-regular fa-star"></i></button>
-                  <button type="button" class="btn btn-light btn-sm clickable-top"><i class="fa-solid fa-utensils"></i></button>
-                </div>
-                <a href="recept.php" class="link-underline stretched-link">Se recept</a>
-              </div>
-            </div>
+                <?php 
+                } // End of while loop
+            } else {
+                echo '<div class="col-12"><p class="alert alert-info">Inga recept hittades i kokboken.</p></div>';
+            }
+            ?>
           </div>
+       </div>
 
-              <!-- Kort 2 -->
-<div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
-    <div class="card-body">
-
-    <div class="d-flex ">
-        <div style="width: 10%;">
-            <div class="ratio ratio-1x1">
-                <img src="assets/images/profilepictures/Picture1.png" 
-                     class="rounded-circle object-fit-cover" 
-                     alt=" $recipeChefName profile picture">
-            </div>
-        </div>
-        <p class="card-text fw-bold ms-3 mb-0"> Per Pasta</p> 
-    </div>
-    <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-            En härligt krämig carbonara med krispigt stekt bacon, parmesanost och len grädde som toppas att nymalen svartpeppar och rucola. Lika god en fredagskväll eller som till lyxlunch på helgen.
-          </p>
-        <hr class="my-3" />
-        <div class="comment-section mb-3">
-
-            <div class="comment mb-3"> <!-- Kommentar 1 -->
-                <div class="d-flex align-items-center mb-2">
-                      <div class="ratio ratio-1x1" style="width: 10%;">
-                            <img src="assets/images/profilepictures/Picture2.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
-                    </div>
-                    <p class="card-text fw-bold ms-2 mb-0 small">Lisa Larsson</p>
-                  </div>
-                  <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Carbonara med grädde? Nä nu räcker det</p>
-                </div>
-
-                <div class="comment mb-3"> <!-- Kommentar 2 -->
-                  <div class="d-flex align-items-center mb-2">
-                    <div class="ratio ratio-1x1" style="width: 10%;">
-                      <img src="assets/images/profilepictures/Picture3.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
-                    </div>
-                    <p class="card-text fw-bold ms-2 mb-0 small">Lennart Legend</p>
-                  </div>
-                  <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Gjorde denna på en dejt, vi har 4 barn nu </p>
-                </div>
-
-                    <a href="recept.php" class="link-underline stretched-link">Se alla kommentarer</a>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
         <!-- Call to action -->
           <div class="text-end mt-4 ">
               <a href="recipe_add.php" class="btn btn-secondary text-dark my-2 rounded-pill">Lägg till eget recept <i class="fa-solid fa-arrow-right"></i></a>
               <a href="recipe_view_all.php" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- Call to action -->
-      <div class="text-end mt-4 ">
-        <a href="#" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-</div>
+      
+
 
 </main>
 <?php

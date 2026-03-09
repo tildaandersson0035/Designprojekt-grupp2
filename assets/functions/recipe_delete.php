@@ -1,18 +1,18 @@
 <?php
 // Checks whether delete button is pressed
-if (isset($_POST['delete'])) {
+if (isset($_POST['delete_recipe'])) {
 // Creates a query
 $sql = '
-DELETE FROM users
-WHERE id = :id
+DELETE FROM recipes
+WHERE recipeID = :recipeID
 ';
 // Prepares a query
 $stmt = $dbh->prepare($sql);
 // Connects form fields with db containers
-$stmt->bindValue(':id', $_POST['id']);
+$stmt->bindValue(':recipeID', $_POST['recipeID']);
 // Sends query to database
 if ($stmt->execute()) {
-header('Location: ../../index.php?action=deleted');
+header('Location: ../../recipe_view_all.php?action=deleted');
 exit();
 }
 }

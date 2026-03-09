@@ -27,7 +27,8 @@ require_once 'assets/includes/header.php';
 <div class="row mb-3">
 <label for="recipePhoto" class="col-1 col-form-label">Foto</label>
 <div class="col-4">
-<input type="text" class="form-control" readonly id="recipePhoto" name="recipePhoto" required placeholder="Lägg upp ett foto" maxlength="255" value="<?php echo $row['recipePhoto']; ?>"></div>
+  <img src="<?php echo $row['recipePhoto']; ?>" alt="<?php echo $row['recipeTitle']; ?>" style="max-width: 100%; height: auto; border-radius: 8px;">
+<input type="hidden" class="form-control" readonly id="recipePhoto" name="recipePhoto" required placeholder="Lägg upp ett foto" maxlength="255" value="<?php echo $row['recipePhoto']; ?>"></div>
 
 <div class="row mb-3 mt-3">
   <label for="recipeCuisine" class="col-1 col-form-label">Kök</label>
@@ -153,7 +154,7 @@ require_once 'assets/includes/header.php';
 </form>
 
 <a href="recipe_edit.php?recipeID=<?php echo $row['recipeID']; ?>" class="btn btn-primary text-light my-2 rounded-pill"><i class="fa-solid fa-pen"></i>Redigera</a>
-<a href="recipe_remove.php?recipeID=<?php echo $row['recipeID']; ?>" class="btn btn-primary text-light my-2 rounded-pill"><i class="fa-solid fa-trash"></i> Radera</a>
+<a href="recipe_iterate.php?recipeID=<?php echo $row['recipeID']; ?>" class="btn btn-primary text-light my-2 rounded-pill"><i class="fa-solid fa-utensils"></i> Gör om gör rätt</a>
 
 </main>
 
