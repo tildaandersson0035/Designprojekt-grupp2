@@ -5,7 +5,9 @@ session_start();
 require_once 'assets/config/db.php';
 // Register information to database
 require_once 'assets/functions/recipe_update.php';
-// User info
+// Delete information from database
+require_once 'assets/functions/recipe_delete.php';
+// Recipe info
 require_once 'assets/functions/recipe_select-id.php';
 // User info
 require_once 'assets/functions/user_select-id.php';
@@ -153,6 +155,11 @@ require_once 'assets/includes/header.php';
 <button type="submit" class="btn btn-primary text-light my-2 rounded-pill" name="edit_recipe" >
 <i class="fa-regular fa-floppy-disk"></i> Spara ändringar
 </button>
+
+<button type="submit" class="btn btn-secondary text-dark my-2 rounded-pill" name="delete_recipe">
+<i class="fa-solid fa-trash"></i> Radera recept
+</button>
+
 
 </form>
 </main>

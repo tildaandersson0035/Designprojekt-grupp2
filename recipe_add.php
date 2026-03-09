@@ -11,8 +11,21 @@ require_once 'assets/functions/user_select-id.php';
 require_once 'assets/includes/header.php';
 ?>
 
+<?php
+// Checks whether errors have been set
+if (!empty($errors)) {
+echo '<ul class="alert alert-danger ps-5">';
+// Prints out all possible errors
+foreach ($errors as $error) {
+echo '<li>' . $error . '</li>';
+}
+echo '</ul>';
+}
+?>
+
+
 <main class="container mt-5">
-<form action="recipe_add.php" method="post">
+<form action="recipe_add.php" method="post" enctype="multipart/form-data">
 
 <div class="row mb-3">
 <label for="recipeTitle" class="col-1 col-form-label">Titel</label>
@@ -23,10 +36,11 @@ require_once 'assets/includes/header.php';
 
 
 <div class="row mb-3">
-<label for="recipePhoto" class="col-1 col-form-label">Foto</label>
+<label for="recipePicture" class="col-1 col-form-label">Foto</label>
 <div class="col-4">
-<input type="text" class="form-control" id="recipePhoto" name="recipePhoto" required placeholder="Lägg upp ett foto" maxlength="255">
+<input type="file" class="form-control" id="recipePicture" name="recipePicture" required placeholder="Lägg upp ett foto">
 </div>
+
 </div>
 
 <div class="row mb-3 mt-3">

@@ -3,7 +3,7 @@
 session_start();
 // Opens database connection 
 require_once 'assets/config/db.php';
-// Register information to database
+// Get information from database
 require_once 'assets/functions/recipe_select.php';
 // User info
 require_once 'assets/functions/user_select-id.php';
@@ -86,7 +86,7 @@ while ($row = $stmt->fetch()) {
                             
                             <div class="container text-center mt-4">
                                 <div class="plate-container">
-                                    <img src="photos/<?php echo htmlspecialchars($row['recipePhoto']); ?>" class="plate-border" alt="<?php echo htmlspecialchars($row['recipeTitle']); ?>">
+                                    <img src="<?php echo htmlspecialchars($row['recipePhoto']); ?>" class="plate-border" alt="<?php echo htmlspecialchars($row['recipeTitle']); ?>">
                                 </div>
                             </div>
 
