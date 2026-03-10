@@ -65,29 +65,8 @@ require_once 'assets/includes/header.php';
             </form>
           </div>
         </div>
-        <!-- Registera dig ruta -->
-        <div class="col-md-10 mx-auto col-lg-4">
-          <form class="p-4 p-md-5 border rounded-3 bg-light ">
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-              <label for="floatingInput">E-post</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="password"
-                class="form-control"
-                id="floatingPassword"
-                placeholder="Password" />
-              <label for="floatingPassword">Lösenord</label>
-            </div>
-            <button class="w-100 btn btn-lg btn-dark mb-2 rounded-pill " type="submit">
-              Registera
-            </button>
-            <small class="text-body-secondary">Genom att registrera dig godkänner du våra <a href="terms.html">användarvillkor.</a>
-              Redan medlem? <a href="log-in.html">logga in här.</a></small>
-          </form>
-        </div>
-      </div>
+        
+        
     </div>
     <!-- Innehåll -->
     <div class="container pb-4 py-5" id="featured-3">
