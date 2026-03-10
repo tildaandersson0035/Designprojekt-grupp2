@@ -3,6 +3,7 @@
 $sql = "SELECT recipes.*, users.userID, users.userPicture, users.userFirstname, users.userSurname
         FROM recipes 
         JOIN users ON recipes.userID = users.userID 
+        WHERE recipes.isMonthly = true
         ORDER BY recipeDate DESC";
 // Prepares a query
 $stmt = $dbh->prepare($sql);

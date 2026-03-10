@@ -1,12 +1,12 @@
 <?php
-// Checks if registration button has been pressed
-if (isset($_POST['edit_recipe'])) {
+// Checks if iteration button has been pressed
+if (isset($_POST['iterate_recipe'])) {
 
-// Creates a query
+// Creates a query to insert a NEW recipe based on the original
 $sql = '
-UPDATE recipes															
- SET recipeTitle = :recipeTitle, recipePhoto = :recipePhoto, recipeCuisine = :recipeCuisine, recipeProtein = :recipeProtein, recipeDifficulty = :recipeDifficulty, recipeTime = :recipeTime, recipeDescription = :recipeDescription, recipePortions = :recipePortions, recipeIngrediens = :recipeIngrediens, recipeHow = :recipeHow, recipeTips = :recipeTips, recipeImprovements = :recipeImprovements, recipeDate = NOW()
- WHERE recipeID = :recipeID
+INSERT INTO recipes																
+ (userID, recipeTitle, recipePhoto, recipeCuisine, recipeProtein, recipeDifficulty, recipeTime, recipeDescription, recipePortions, recipeIngrediens, recipeHow, recipeTips, recipeImprovements, recipeDate, isMonthly)
+VALUES (1, :recipeTitle, :recipePhoto, :recipeCuisine, :recipeProtein, :recipeDifficulty, :recipeTime, :recipeDescription, :recipePortions, :recipeIngrediens, :recipeHow, :recipeTips, :recipeImprovements, NOW(), 0)
 ';
 
 // Prepares query
@@ -25,15 +25,11 @@ $stmt->bindValue(':recipeIngrediens', $_POST['recipeIngrediens']);
 $stmt->bindValue(':recipeHow', $_POST['recipeHow']);
 $stmt->bindValue(':recipeTips', $_POST['recipeTips']);
 $stmt->bindValue(':recipeImprovements', $_POST['recipeImprovements']);
-$stmt->bindValue(':recipeID', $_POST['recipeID']);
 
 // Sends query to database
-try {
-    $stmt->execute();
-header('Location: ../../recipe_view_all.php?action=updated');
-}
-catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+if ($stmt->execute()) {
+    header('Location: recipe_view_all.php?action=iterated');
+    exit();
 }
 }
 ?>
