@@ -200,9 +200,21 @@
 }
 
 .text-first-capitalize {
-    text-transform: lowercase; /* Gör allt smått först */
+    text-transform: lowercase;
+    /* Gör allt smått först */
 }
 
 .text-first-capitalize::first-letter {
-    text-transform: uppercase; /* Gör bara första bokstaven stor */
+    text-transform: uppercase;
+    /* Gör bara första bokstaven stor */
+}
+
+/* SE ETT RECEPT SIDA*/
+.plate-container-big {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative;
+    padding: 30px;
+    display: block;
 }
