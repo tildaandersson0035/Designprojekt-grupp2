@@ -2,6 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+require_once 'assets/config/db.php';
+require_once 'assets/includes/display_errors.php';
 require_once 'assets/functions/user_session.login.php';
 ?>
 
@@ -91,7 +93,7 @@ require_once 'assets/functions/user_session.login.php';
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </a>
 
-                            <a href="/help.php"
+                            <a href="/about.php"
                                 class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
                                 style="width:42px; height:42px; padding:0;">
                                 <i class="fa-solid fa-question"></i>
