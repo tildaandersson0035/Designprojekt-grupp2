@@ -175,7 +175,6 @@
     background-position: center;
 }
 
-
 /* Generel styles */
 html,
 body {
@@ -190,8 +189,6 @@ main {
 }
 
 /* HEADER */
-
-
 :root {
     --ck-navy: #0b2230;
     --ck-red: #b2191b;
@@ -211,38 +208,15 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
 }
 
-/* logo */
-.ck-logo img {
-    height: 55px;
-    display: block;
-}
-
-/* tagline */
-.ck-tagline {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
 /* highlighted word */
 .ck-highlight {
     color: #e23a3c;
 }
 
-/* nav buttons */
-.ck-pill {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 999px;
-    padding: 6px 14px;
-    color: white;
-    text-decoration: none;
-    transition: 0.2s ease;
+.navbar .nav-link:hover,
+.navbar .nav-link:hover i {
+    color: var(--ck-red) !important;
 }
-
-.ck-pill:hover {
-    background: var(--ck-red);
-    color: white;
-}
-
 
 /* FOOTER */
 

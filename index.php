@@ -333,6 +333,7 @@ require_once 'assets/includes/header.php';
   // Footer
   require_once 'assets/includes/footer.php';
   ?>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
