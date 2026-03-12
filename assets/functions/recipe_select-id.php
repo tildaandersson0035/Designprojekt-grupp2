@@ -1,15 +1,30 @@
 <?php
-// Checks whether recipeID is available as GET
-if (isset($_GET['recipeID'])) {
-// Gets specific post from database
-$sql = 'SELECT * FROM recipes WHERE recipeID = :recipeID';
-// Prepares a query
-$stmt = $dbh->prepare($sql);
-// Connects GET-variable with db containers
-$stmt->bindValue(':recipeID', $_GET['recipeID']);
-// Sends query to database
-$stmt->execute();
-// Adds all information about recipe to variable
-$row = $stmt->fetch();
+
+// Initialize with blank values
+$row = [
+    'recipeID' => '',
+    'recipeTitle' => '',
+    'recipePhoto' => '',
+    'recipeCuisine' => '',
+    'recipeProtein' => '',
+    'recipeDifficulty' => '',
+    'recipeTime' => '',
+    'recipeDescription' => '',
+    'recipePortions' => '',
+    'recipeIngrediens' => '',
+    'recipeHow' => '',
+    'recipeTips' => '',
+    'recipeImprovements' => ''
+];
+
+// Check for recipeID in both GET (initial load) and POST (form submission)
+$id = $_GET['recipeID'] ?? $_POST['recipeID'] ?? null;
+
+if (isset($id) && !empty($id)) {
+    $sql = 'SELECT * FROM recipes WHERE recipeID = :recipeID';
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':recipeID', $id);
+    $stmt->execute();
+    $row = $stmt->fetch();
 }
 ?>
