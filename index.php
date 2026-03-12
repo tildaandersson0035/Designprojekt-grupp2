@@ -1,5 +1,5 @@
 <?php
-// Start session FIRST before any other output
+// Start session
 session_start();
 // Opens database connection 
 require_once 'assets/config/db.php';
@@ -204,8 +204,7 @@ while ($row = $stmt->fetch()) {
 
         <!-- Call to action -->
           <div class="text-end mt-4 ">
-              <a href="recipe_add.php" class="btn btn-secondary text-dark my-2 rounded-pill">Lägg till eget recept <i class="fa-solid fa-arrow-right"></i></a>
-              <a href="recipe_view_all.php" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
+<a href="recipe_edit.php?mode=add" class="btn btn-secondary text-dark my-2 rounded-pill">Lägg till eget recept <i class="fa-solid fa-arrow-right"></i></a>              <a href="recipe_view_all.php" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
             </div>
       
 

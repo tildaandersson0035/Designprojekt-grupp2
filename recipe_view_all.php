@@ -1,5 +1,5 @@
 <?php
-// Start session FIRST before any other output
+// Start session
 session_start();
 // Opens database connection 
 require_once 'assets/config/db.php';
@@ -21,7 +21,7 @@ require_once 'assets/includes/header.php';
             case 'inserted':
                 echo '
 <div class="alert alert-success">
-Posten har lagts till i databasen!
+Receptet har lagts till!
 </div>
 ';
                 break;
@@ -37,7 +37,7 @@ Posten har lagts till i databasen!
             case 'updated':
                 echo '
 <div class="alert alert-success">
-Posten har uppdaterats i databasen!
+Receptet har uppdaterats!
 </div>
 ';
                 break;
@@ -53,7 +53,7 @@ Posten har uppdaterats i databasen!
             case 'deleted':
                 echo '
 <div class="alert alert-danger">
-Posten har raderats från databasen!
+Receptet har raderats!
 </div>
 ';
                 break;
@@ -84,7 +84,7 @@ Posten har raderats från databasen!
                                 </div>
 
                                 <h4 class="card-title text-center mb-4 fs-3 text-first-capitalize">
-                                    <?php echo $row['recipeTitle']; ?>
+                                    <?php echo ucfirst($row['recipeTitle']); ?>
                                 </h4>
 
                                 <div class="container text-center mb-4">

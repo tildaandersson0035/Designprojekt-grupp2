@@ -1,5 +1,5 @@
 <?php
-// Start session FIRST before any other output
+// Start session
 session_start();
 // Opens database connection 
 require_once 'assets/config/db.php';
@@ -19,7 +19,7 @@ require_once 'assets/includes/header.php';
   <div class="row">
     <div class="col-8">
 
-      <h1 class="px-3 mb-4 fw-bold"><?php echo $row['recipeTitle']; ?></h1>
+      <h1 class="px-3 mb-4 fw-bold"><?php echo ucfirst($row['recipeTitle']); ?></h1>
 
       <div class="plate-container-big">
         <img src="<?php echo $row['recipePhoto']; ?>" class="plate-border" alt="<?php echo $row['recipeTitle']; ?>">
@@ -85,17 +85,14 @@ require_once 'assets/includes/header.php';
         // Is user logged in and is it users recipe?
         if (isset($_SESSION['userID']) && $_SESSION['userID'] == $row['userID']):
         ?>
-          <a href="recipe_edit.php?recipeID=<?= $row['recipeID']; ?>" class="btn btn-primary text-light rounded-pill">
-            <i class="fa-solid fa-pen me-2"></i>Redigera recept
-          </a>
-          <a href="recipe_remove.php?recipeID=<?= $row['recipeID']; ?>" class="btn btn-danger text-light rounded-pill">
-            <i class="fa-solid fa-trash me-2"></i>Radera recept
+          <a href="recipe_edit.php?mode=edit&recipeID=<?= $row['recipeID']; ?>" class="btn btn-primary text-light rounded-pill">
+            <i class="fa-solid fa-pen me-2"></i>Redigera/ radera recept
           </a>
 
         <?php else: ?>
-          <a href="recipe_iterate.php?recipeID=<?= $row['recipeID']; ?>" class="btn btn-warning text-dark rounded-pill">
+          <a href="recipe_edit.php?mode=iterate&recipeID=<?= $row['recipeID']; ?>" class="btn btn-warning text-dark rounded-pill">
             <i class="fa-solid fa-utensils me-2"></i>Gör om gör rätt
-          </a>
+          </a>          
         <?php endif; ?>
       </div>
     </div>
