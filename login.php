@@ -1,7 +1,10 @@
 <?php
 require_once 'assets/includes/display_errors.php';
+// Databasanslutning
 require_once 'assets/config/db.php';
+// Hanterar inloggning och skapar session vid lyckad inloggning
 require_once 'assets/functions/user_session.login.php';
+// Sidhuvud
 require_once 'assets/includes/header.php';
 ?>
 
@@ -10,19 +13,23 @@ require_once 'assets/includes/header.php';
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
 
-        <div class="text-center mb-4">
-          <h1 class="py-2">Chefs Kiss</h1>
-          <h2 class="h4">Logga in</h2>
-        </div>
+        <!-- Section används här eftersom detta är sidans huvudsakliga och avgränsade innehållsdel -->
+        <section class="bg-white rounded-3 p-4">
 
-        <div class="bg-white rounded-3 p-4">
+          <!-- Header används här eftersom detta är den inledande delen med sidans rubriker -->
+          <header class="text-center mb-4">
+            <h1 class="py-2">Chefs Kiss</h1>
+            <h2 class="h4">Logga in</h2>
+          </header>
 
           <?php if (!empty($error)): ?>
+            <!-- Visar felmeddelande om inloggningen misslyckas -->
             <div class="alert alert-danger">
               <?= htmlspecialchars($error) ?>
             </div>
           <?php endif; ?>
 
+          <!-- Skickar användarens inloggningsuppgifter till samma sida -->
           <form method="post" action="login.php">
 
             <div class="mb-3">
@@ -43,25 +50,21 @@ require_once 'assets/includes/header.php';
                 <i class="fa-solid fa-lock me-2"></i>Lösenord
               </label>
 
-              <div class="input-group">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="Skriv in ditt lösenord..."
-                  required>
-                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                  <i class="fa-solid fa-eye"></i>
-                </button>
-              </div>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Skriv in ditt lösenord..."
+                required>
             </div>
 
             <button type="submit" class="send text-white w-100">
               Logga in
             </button>
 
-            <div class="text-center mt-3">
+            <!-- Section används här eftersom länkarna är en egen avslutande del som kompletterar formuläret -->
+            <section class="text-center mt-3">
               <a href="#" class="text-decoration-none">Glömt lösenord?</a>
 
               <hr class="my-3">
@@ -70,32 +73,14 @@ require_once 'assets/includes/header.php';
               <a href="register.php" class="text-decoration-none fw-semibold">
                 Registrera dig
               </a>
-            </div>
+            </section>
 
           </form>
 
-        </div>
+        </section>
       </div>
     </div>
   </div>
 </main>
-
-<script>
-  const btn = document.getElementById('togglePassword');
-  const input = document.getElementById('password');
-
-  if (btn && input) {
-    btn.addEventListener('click', () => {
-      const isPassword = input.type === 'password';
-      input.type = isPassword ? 'text' : 'password';
-
-      const icon = btn.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
-      }
-    });
-  }
-</script>
 
 <?php require_once 'assets/includes/footer.php'; ?>
