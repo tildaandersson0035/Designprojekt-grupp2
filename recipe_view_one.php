@@ -1,16 +1,27 @@
 <?php
 // Start session
 session_start();
+
 // Opens database connection 
 require_once 'assets/config/db.php';
+
+// Hanterar att spara nya kommentarer i databasen.
+// För att detta ska fungera måste ett formulär skicka POST-fälten:
+// 'commentContent' (själva kommentaren) och 'recipeID' (vilket recept kommentaren tillhör).
+require_once 'assets/functions/recipe_comment_insert.php';
+
 // Register information to database
 require_once 'assets/functions/recipe_update.php';
+
 // Deletes information from database
 require_once 'assets/functions/recipe_delete.php';
+
 // Recipe info
 require_once 'assets/functions/recipe_select-id.php';
+
 // User info
 require_once 'assets/functions/user_select-id.php';
+
 // Header
 require_once 'assets/includes/header.php';
 ?>
@@ -92,7 +103,7 @@ require_once 'assets/includes/header.php';
         <?php else: ?>
           <a href="recipe_edit.php?mode=iterate&recipeID=<?= $row['recipeID']; ?>" class="btn btn-warning text-dark rounded-pill">
             <i class="fa-solid fa-utensils me-2"></i>Gör om gör rätt
-          </a>          
+          </a>
         <?php endif; ?>
       </div>
     </div>
