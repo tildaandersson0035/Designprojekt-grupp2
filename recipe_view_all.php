@@ -16,7 +16,6 @@ require_once 'assets/includes/header.php';
     <?php
     // Checks if an action is set
     if (isset($_GET['action'])) {
-        // Checks which action is set
         switch ($_GET['action']) {
             case 'inserted':
                 echo '
@@ -30,9 +29,7 @@ Receptet har lagts till!
     ?>
 
     <?php
-    // Checks if an action is set
     if (isset($_GET['action'])) {
-        // Checks which action is set
         switch ($_GET['action']) {
             case 'updated':
                 echo '
@@ -46,9 +43,7 @@ Receptet har uppdaterats!
     ?>
 
     <?php
-    // Checks if an action is set
     if (isset($_GET['action'])) {
-        // Checks which action is set
         switch ($_GET['action']) {
             case 'deleted':
                 echo '
@@ -61,11 +56,11 @@ Receptet har raderats!
     }
     ?>
 
-    <?php
-    // Filtrering/kategorisering för recept
-    ?>
     <div class="row">
-        <div class="col-lg-2 mb-4">
+
+        <!-- Aside används här eftersom filtret är sidoinnehåll
+             som kompletterar huvudcontent (receptlistan) -->
+        <aside class="col-lg-2 mb-4">
             <div class="shadow-sm p-3 bg-body-tertiary rounded">
                 <h5 class="mb-3">Filtrera recept</h5>
 
@@ -101,22 +96,21 @@ Receptet har raderats!
                     </div>
                 </form>
             </div>
-        </div>
-        <?php
-        // Slut på filtrering/kategorisering för recept
-        ?>
+        </aside>
 
-        <div class="col-lg-10">
+        <!-- Section används eftersom detta är huvudområdet
+             där en lista av recept visas -->
+        <section class="col-lg-10">
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 
                 <?php
-                // Checks whether database is empty
                 if ($stmt->rowCount() > 0) {
-                    // Get users from database
                     while ($row = $stmt->fetch()) {
                 ?>
 
-                        <div class="col d-flex align-items-stretch position-relative mb-4">
+                        <!-- Article används eftersom varje recept är ett
+                             självständigt innehåll som kan visas separat -->
+                        <article class="col d-flex align-items-stretch position-relative mb-4">
                             <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
 
                                 <div class="card-body">
@@ -133,7 +127,8 @@ Receptet har raderats!
 
                                     <div class="container text-center mb-4">
                                         <div class="plate-container-small">
-                                            <img src="<?php echo $row['recipePhoto']; ?>" class="plate-border" alt="<?php echo $row['recipeTitle']; ?>">
+                                            <!-- alt beskriver nu tydligt vad bilden visar -->
+                                            <img src="<?php echo $row['recipePhoto']; ?>" class="plate-border" alt="Bild på <?php echo $row['recipeTitle']; ?>">
                                         </div>
                                     </div>
 
@@ -146,6 +141,7 @@ Receptet har raderats!
                                             <i class="fa-regular fa-star"></i>
                                             <span class="text-muted">(45)</span>
                                         </p>
+
                                         <div class="d-flex justify-content-center gap-2">
                                             <button type="button" class="btn btn-light btn-sm clickable-top rounded-circle"><i class="fa-regular fa-bookmark"></i></button>
                                             <button type="button" class="btn btn-light btn-sm clickable-top rounded-circle"><i class="fa-regular fa-comment"></i></button>
@@ -156,9 +152,13 @@ Receptet har raderats!
                                     <hr class="my-3 opacity-25">
 
                                     <div class="d-flex align-items-center mb-2">
+
+                                        <!-- alt beskriver nu vems profilbild det är -->
                                         <img src="assets/images/profilepictures/Picture<?= $row['userPicture'] ?? '1' ?>.png"
                                             class="rounded-circle border"
-                                            style="width: 28px; height: 28px; object-fit: cover;" alt="Profilbild">
+                                            style="width: 28px; height: 28px; object-fit: cover;"
+                                            alt="Profilbild för <?= $row['userFirstname'] . ' ' . $row['userSurname'] ?>">
+
                                         <small class="fw-bold ms-2 mb-0 fw-semibold">
                                             <?= $row['userFirstname'] . " " . $row['userSurname'] ?>
                                         </small>
@@ -174,7 +174,7 @@ Receptet har raderats!
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </article>
 
                 <?php
                      } 
@@ -184,11 +184,10 @@ Receptet har raderats!
                 ?>
 
             </div>
-        </div>
+        </section>
     </div>
 
 </main>
-
 
 <?php
 // footer

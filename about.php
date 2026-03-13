@@ -5,14 +5,25 @@ require_once 'assets/functions/user_select-id.php';
 require_once 'assets/includes/header.php';
 ?>
 
-<main class=bg-light>
-    <!-- FAQ och kontaktformulär -->
-    <div class="container mt-5">
-        <h1 class="py-4 text-center text-primary fw-bold">Hur kan vi hjälpa dig?</h1>
+<main class="bg-light">
+
+    <!-- Section används här eftersom detta är sidans huvudsakliga innehållsdel med FAQ och kontakt -->
+    <section class="container mt-5">
+        <header>
+            <h1 class="py-4 text-center text-primary fw-bold">Hur kan vi hjälpa dig?</h1>
+        </header>
+
         <div class="row justify-content-center">
-            <div class="col-sm-3">
+
+            <!-- Article används här eftersom FAQ-blocket är en självständig informationsdel -->
+            <article class="col-sm-3">
                 <div class="p-2 bg-dark rounded-3">
-                    <h2 class="my-3 text-center text-white">Vanliga frågor</h2>
+
+                    <!-- Header används här eftersom detta är inledningen till FAQ-delen -->
+                    <header>
+                        <h2 class="my-3 text-center text-white">Vanliga frågor</h2>
+                    </header>
+
                     <div class="accordion">
                         <!-- Fråga 1 -->
                         <div class="accordion-item">
@@ -29,9 +40,11 @@ require_once 'assets/includes/header.php';
                                     klassisk pastasås men väljer att byta ut grädden mot kokosmjölk och slänga i lite
                                     chili för extra sting, då skapas en ny version. På så sätt kan alla se din smarta
                                     förbättring medan originalet finns kvar. Det är så vi tillsammans bygger världens
-                                    mest levande kokbok!</div>
+                                    mest levande kokbok!
+                                </div>
                             </div>
                         </div>
+
                         <!-- Fråga 2 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -50,6 +63,7 @@ require_once 'assets/includes/header.php';
                                 </div>
                             </div>
                         </div>
+
                         <!-- Fråga 3 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -67,6 +81,7 @@ require_once 'assets/includes/header.php';
                                 </div>
                             </div>
                         </div>
+
                         <!-- Fråga 4 -->
                         <div class="accordion-item rounded-bottom-3">
                             <h2 class="accordion-header">
@@ -86,16 +101,23 @@ require_once 'assets/includes/header.php';
                         </div>
                     </div>
                 </div>
-                <!-- Kontaktinfo -->
-                <div class="container mt-4">
-                    <h3 class="mb-3 fs-5 text">Kontaktinformation</h3>
-                    <p> <i class="fa-solid fa-envelope"></i> kundservice@chefskiss.se</p>
-                    <p> <i class="fa-solid fa-phone"></i> 070-000 00 00</p>
-                </div>
-            </div>
-            <!-- Formulär -->
-            <div class="col-sm-8 p-4">
-                <h2 class="mb-4">Släng iväg ett meddelande!</h2>
+
+                <!-- Article används här eftersom kontaktinformationen är en egen informationsdel -->
+                <article class="container mt-4">
+                    <header>
+                        <h3 class="mb-3 fs-5 text">Kontaktinformation</h3>
+                    </header>
+                    <p><i class="fa-solid fa-envelope"></i> kundservice@chefskiss.se</p>
+                    <p><i class="fa-solid fa-phone"></i> 070-000 00 00</p>
+                </article>
+            </article>
+
+            <!-- Article används här eftersom kontaktformuläret är en självständig del med ett eget syfte -->
+            <article class="col-sm-8 p-4">
+                <header>
+                    <h2 class="mb-4">Släng iväg ett meddelande!</h2>
+                </header>
+
                 <div class="row mb-3">
                     <div class="col">
                         <label for="firstName" class="form-label visually-hidden">Förnamn</label>
@@ -108,10 +130,12 @@ require_once 'assets/includes/header.php';
                             aria-label="Last name">
                     </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label visually-hidden">E-postadress</label>
                     <input type="email" class="form-control" id="email" placeholder="E-postadress">
                 </div>
+
                 <div class="mb-3">
                     <label for="subject" class="form-label">Vad gäller det?</label>
                     <select class="form-select" id="subject">
@@ -121,24 +145,30 @@ require_once 'assets/includes/header.php';
                         <option value="3">Övrigt smått och gott</option>
                     </select>
                 </div>
+
                 <div class="mb-3">
                     <label for="message" class="form-label">Meddelande</label>
                     <textarea class="form-control" id="message" rows="5"></textarea>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Skicka</button>
-            </div>
+            </article>
         </div>
-    </div>
-    <!-- Om oss -->
+    </section>
+
     <img src="assets/images/awning_blue.svg" class="w-100 d-block rotate mt-5" alt="awning graphic">
-    <div class="container-fluid text-center bg-dark py-4">
+
+    <!-- Section används här eftersom "Om oss" är en egen avslutande innehållsdel på sidan -->
+    <section class="container-fluid text-center bg-dark py-4">
         <div class="row justify-content-center">
             <div class="col-6 text-white">
-                <h2 class="mb-4 text-primary fw-bold">Om oss</h2>
-                <p> Chef's Kiss är en passionerad matlagningsplattform och en levande digital kokbok som vi utvecklar tillsammans. Vi strävar efter att göra matlagning roligare genom att låta dig dela, spara och iterera recept för att skapa dina egna versioner. Vårt mål är att inspirera både nybörjare och erfarna kockar att upptäcka nya smaker och ständigt förbättra varandras rätter. Utforska samlingen, bygg vidare på communityns idéer och hitta din nya favoritdrätt idag!</p>
+                <header>
+                    <h2 class="mb-4 text-primary fw-bold">Om oss</h2>
+                </header>
+                <p>Chef's Kiss är en passionerad matlagningsplattform och en levande digital kokbok som vi utvecklar tillsammans. Vi strävar efter att göra matlagning roligare genom att låta dig dela, spara och iterera recept för att skapa dina egna versioner. Vårt mål är att inspirera både nybörjare och erfarna kockar att upptäcka nya smaker och ständigt förbättra varandras rätter. Utforska samlingen, bygg vidare på communityns idéer och hitta din nya favoritdrätt idag!</p>
             </div>
         </div>
-    </div>
+    </section>
 </main>
 
 <?php
