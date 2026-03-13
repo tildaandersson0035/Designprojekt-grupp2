@@ -259,3 +259,47 @@ main {
         font-size: 0.95rem;
     }
 }
+
+/* FAQ/OM OSS SIDA */
+.rotate {
+    transform: rotate(180deg);
+}
+
+
+/* ALLA RECEPT SIDA */
+
+.plate-container-small {
+    width: 70%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    padding: 30px;
+    display: block;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text-first-capitalize {
+    text-transform: lowercase;
+    /* Gör allt smått först */
+}
+
+.text-first-capitalize::first-letter {
+    text-transform: uppercase;
+    /* Gör bara första bokstaven stor */
+}
+
+/* SE ETT RECEPT SIDA*/
+.plate-container-big {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative;
+    padding: 30px;
+    display: block;
+}

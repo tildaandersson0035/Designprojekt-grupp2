@@ -1,24 +1,12 @@
 <?php
-if (isset($_POST['edit_recipe'])) {
+if (isset($_POST['iterate_recipe'])) {
     $errors = array();
-    
-    // Validate required fields
-    if (empty($_POST['recipeTitle'])) {
-        $errors[] = 'Titel är obligatorisk';
-    }
-    if (empty($_POST['recipeTime'])) {
-        $errors[] = 'Tid är obligatorisk';
-    }
-    if (empty($_POST['recipePortions'])) {
-        $errors[] = 'Portioner är obligatoriska';
-    }
-    
-    $recipePhoto = $_POST['recipePhoto'] ?? ''; // Keep existing path by default
+    $recipePhoto = $_POST['recipePhoto'] ?? ''; // Use existing photo by default
 
-    // Only process file upload if a file was selected
+    // Allow uploading a new photo for the iteration
     if (isset($_FILES['recipePicture']) && $_FILES['recipePicture']['size'] != 0) {
         $max_file_size = 20971520;
-        $file_types = array('gif', 'jpg', 'jpeg', 'png', 'webp');
+        $file_types = array('gif', 'jpg', 'jpeg', 'png');
         $upload_dir = 'photos/';
         
         $file_tmp = $_FILES['recipePicture']['tmp_name'];
@@ -42,9 +30,9 @@ if (isset($_POST['edit_recipe'])) {
         }
     }
 
-    // Only update if no errors
+    // Create new recipe if no errors
     if (empty($errors)) {
-        $sql = 'UPDATE recipes SET recipeTitle = :recipeTitle, recipePhoto = :recipePhoto, recipeCuisine = :recipeCuisine, recipeProtein = :recipeProtein, recipeDifficulty = :recipeDifficulty, recipeTime = :recipeTime, recipeDescription = :recipeDescription, recipePortions = :recipePortions, recipeIngrediens = :recipeIngrediens, recipeHow = :recipeHow, recipeTips = :recipeTips, recipeImprovements = :recipeImprovements, recipeDate = NOW() WHERE recipeID = :recipeID';
+        $sql = 'INSERT INTO recipes (userID, recipeTitle, recipePhoto, recipeCuisine, recipeProtein, recipeDifficulty, recipeTime, recipeDescription, recipePortions, recipeIngrediens, recipeHow, recipeTips, recipeImprovements, recipeDate, isMonthly) VALUES (1, :recipeTitle, :recipePhoto, :recipeCuisine, :recipeProtein, :recipeDifficulty, :recipeTime, :recipeDescription, :recipePortions, :recipeIngrediens, :recipeHow, :recipeTips, :recipeImprovements, NOW(), 0)';
         
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':recipeTitle', $_POST['recipeTitle']);
@@ -59,10 +47,9 @@ if (isset($_POST['edit_recipe'])) {
         $stmt->bindValue(':recipeHow', $_POST['recipeHow']);
         $stmt->bindValue(':recipeTips', $_POST['recipeTips']);
         $stmt->bindValue(':recipeImprovements', $_POST['recipeImprovements']);
-        $stmt->bindValue(':recipeID', $_POST['recipeID']);
         
         if ($stmt->execute()) {
-            header('Location: ../../recipe_view_all.php?action=updated');
+            header('Location: recipe_view_all.php?action=iterated');
             exit();
         }
     }
