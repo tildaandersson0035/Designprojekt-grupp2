@@ -3,6 +3,7 @@
 session_start();
 // Opens database connection 
 require_once 'assets/config/db.php';
+session_start();
 // Omvandlare för att visa dynamiskt månadsnamn på svenska
 $months_sv = [
   1 => 'januari',
@@ -24,7 +25,7 @@ $currentMonth = $months_sv[$monthNumber]; // Hämtar motsvarande månadsnam
 require_once 'assets/functions/recipe_select_monthly.php';
 // User info
 require_once 'assets/functions/user_select-id.php';
-// Header
+// Header & footer
 require_once 'assets/includes/header.php';
 ?>
 
@@ -206,11 +207,73 @@ while ($row = $stmt->fetch()) {
           <div class="text-end mt-4 ">
 <a href="recipe_edit.php?mode=add" class="btn btn-secondary text-dark my-2 rounded-pill">Lägg till eget recept <i class="fa-solid fa-arrow-right"></i></a>              <a href="recipe_view_all.php" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-      
+          </div>
 
 
-</main>
-<?php
-// footer
-require_once 'assets/includes/footer.php';
-?>
+          <!-- Kort 2 -->
+          <div class="card shadow-sm px-4 py-3" style="z-index: 1; width: 47%; margin-top: 10px;">
+            <div class="card-body">
+
+              <div class="d-flex ">
+                <div style="width: 10%;">
+                  <div class="ratio ratio-1x1">
+                    <img src="assets/images/profilepictures/Picture1.png"
+                      class="rounded-circle object-fit-cover"
+                      alt=" $recipeChefName profile picture">
+                  </div>
+                </div>
+                <p class="card-text fw-bold ms-3 mb-0"> Per Pasta</p>
+              </div>
+              <p class="text-start" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                En härligt krämig carbonara med krispigt stekt bacon, parmesanost och len grädde som toppas att nymalen svartpeppar och rucola. Lika god en fredagskväll eller som till lyxlunch på helgen.
+
+
+
+              </p>
+
+
+
+
+              <hr class="my-3" />
+              <div class="comment-section mb-3">
+
+                <div class="comment mb-3"> <!-- Kommentar 1 -->
+                  <div class="d-flex align-items-center mb-2">
+                    <div class="ratio ratio-1x1" style="width: 10%;">
+                      <img src="assets/images/profilepictures/Picture2.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
+                    </div>
+                    <p class="card-text fw-bold ms-2 mb-0 small">Lisa Larsson</p>
+                  </div>
+                  <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Carbonara med grädde? Nä nu räcker det</p>
+                </div>
+
+                <div class="comment mb-3"> <!-- Kommentar 2 -->
+                  <div class="d-flex align-items-center mb-2">
+                    <div class="ratio ratio-1x1" style="width: 10%;">
+                      <img src="assets/images/profilepictures/Picture3.png" class="rounded-circle object-fit-cover" alt="$recipeChefName profile picture">
+                    </div>
+                    <p class="card-text fw-bold ms-2 mb-0 small">Lennart Legend</p>
+                  </div>
+                  <p class="card-text mb-1 small" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">Gjorde denna på en dejt, vi har 4 barn nu </p>
+                </div>
+
+                <a href="recept.php" class="link-underline stretched-link">Se alla kommentarer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Call to action -->
+      <div class="text-end mt-4 ">
+        <a href="#" class="btn btn-dark text-light my-2 rounded-pill">Bläddra i hela kokboken <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <?php
+  // Footer
+  require_once 'assets/includes/footer.php';
+  ?>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

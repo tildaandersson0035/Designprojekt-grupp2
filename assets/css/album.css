@@ -175,6 +175,91 @@
     background-position: center;
 }
 
+/* Generel styles */
+html,
+body {
+    height: 100%;
+}
+
+/* Tar hänsyn till footer och lämnar lite utrymme*/
+main {
+    min-height: calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+:root {
+    --ck-navy: #0b2230;
+    --ck-red: #b2191b;
+}
+
+/* sticky header */
+.ck-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+/* header bakgrudnsfärg och boxskugga */
+.ck-hero {
+    background: var(--ck-navy);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
+}
+
+/* highlighted word */
+.ck-highlight {
+    color: #e23a3c;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:hover i {
+    color: var(--ck-red) !important;
+}
+
+/* FOOTER */
+
+/* bakgrundsfärg */
+.ck-footer {
+    background: var(--ck-navy);
+}
+
+/* färg och färganimering, länkar utan understrykning */
+.ck-footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+/* länkar blir röda vid hover */
+.ck-footer-links a:hover {
+    color: var(--ck-red);
+}
+
+/* färg, storlek, färganimering sociala medier ikoner */
+.ck-footer-social a {
+    color: white;
+    font-size: 1.25rem;
+    transition: 0.2s ease;
+}
+
+/* ikoner blir röda vid hover */
+.ck-footer-social a:hover {
+    color: var(--ck-red);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .ck-logo img {
+        height: 48px;
+    }
+
+    .ck-tagline {
+        font-size: 0.95rem;
+    }
+}
+
 /* FAQ/OM OSS SIDA */
 .rotate {
     transform: rotate(180deg);
