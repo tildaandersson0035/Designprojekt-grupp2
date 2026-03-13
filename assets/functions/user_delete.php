@@ -1,23 +1,38 @@
 <?php
-// Checks if registration button has been pressed
-if (isset($_POST['delete_recipe'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
-// Creates a query
-$sql = '
-DELETE FROM recipes
-WHERE recipeID = :recipeID
-';
+    if (!isset($_SESSION['userID'])) {
+        header('Location: login.php');
+        exit;
+    }
 
-// Prepares query
-$stmt = $dbh->prepare($sql);
+    $userID = $_SESSION['userID'];
 
-// Connects form fields with db containers
-$stmt->bindValue(':recipeID', $_POST['recipeID']);
+    $sql = "DELETE FROM users WHERE userID = :userID LIMIT 1";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':userID', $userID, PDO::PARAM_INT);
+    $stmt->execute();
 
-// Sends query to database
-if ($stmt->execute()) {
-header('Location: ../../recipe_view_all.php?action=deleted');
-exit();
+    $_SESSION = [];
+
+    if (ini_get('session.use_cookies')) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params['path'],
+            $params['domain'],
+            $params['secure'],
+            $params['httponly']
+        );
+    }
+
+    session_destroy();
+
+    header('Location: register.php');
+    exit;
 }
-}
-?>
